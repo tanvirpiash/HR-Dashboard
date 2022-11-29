@@ -4,10 +4,16 @@
          .selfcare-wrapper {
             display: flex;
             justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 10px;
+            gap: 25px;
+            @include desktop-lg {
+               flex-wrap: wrap;
+               gap: 0;
+            }
             .selfcare {
-               width: 40%;
+               min-width: 40%;
+               @include desktop-lg {
+                  min-width: 56%;
+               }
                .card {
                   .card-body {
                      ul {
@@ -28,6 +34,9 @@
                               .btn-info {
                                  display: flex;
                                  gap: 5px;
+                                 min-width: 165px;
+                                 align-items: center;
+                                 justify-content: space-between;
                                  span {
                                     color: white !important;
                                     font-weight: bold;
@@ -60,22 +69,47 @@
                }
             }
             .training {
-               width: 30%;
+               min-width: 30%;
+               @include desktop-lg {
+                  min-width: 40%;
+               }
                // background-color: red;
             }
             .chat-heads {
-               width: 25%;
+               min-width: 25%;
+               @include desktop-lg {
+                  min-width: 100%;
+               }
                .card-title {
-                  padding: 0;
-                  padding-top: 20px;
+                  padding: 20px 0 0 0;
+                  text-align: center;
+                  @include desktop-lg {
+                     text-align: left;
+                     padding-left: 20px;
+                  }
                }
                .card-body {
                   display: flex;
                   flex-direction: column;
                   align-items: center;
                   gap: 5px;
+                  @include desktop-lg {
+                     flex-direction: row;
+                     // flex-wrap: wrap;
+                     justify-content: center;
+                  }
                   .chat-single-head {
                      border-radius: 3px;
+                     @include desktop-lg-sm {
+                        max-width: 25%;
+                     }
+                     a {
+                        img {
+                           @include desktop-lg-sm {
+                              max-width: 100%;
+                           }
+                        }
+                     }
                   }
 
                   li {
