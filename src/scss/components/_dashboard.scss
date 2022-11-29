@@ -1,10 +1,96 @@
 .main {
    .section {
-      .profile {
-         // background-color: red;
-      }
-      .selfcare {
-         background-color: aqua;
+      .dashboard-card {
+         .selfcare-wrapper {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            .selfcare {
+               width: 40%;
+               .card {
+                  .card-body {
+                     ul {
+                        li {
+                           padding: 0;
+                           span {
+                              font-size: 13px;
+                              font-weight: 700;
+                              color: rgba(1, 41, 112, 0.6);
+                           }
+                           div {
+                              display: flex;
+                              padding-top: 8px;
+                              gap: 10px;
+                              .btn {
+                                 font-size: 12.5px;
+                              }
+                              .btn-info {
+                                 display: flex;
+                                 gap: 5px;
+                                 span {
+                                    color: white !important;
+                                    font-weight: bold;
+                                    border-left: 1px solid white;
+                                    padding-left: 5px;
+                                    margin-left: 4px;
+                                 }
+                              }
+                           }
+                           &:last-child {
+                              padding-top: 15px;
+                              &:hover {
+                                 background-color: white;
+                              }
+                              .btn {
+                                 font-size: 12px;
+                              }
+                              .text-center {
+                                 align-items: center;
+                                 justify-content: center;
+                                 button {
+                                    min-width: 125px;
+                                    min-height: 33px;
+                                 }
+                              }
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+            .training {
+               width: 30%;
+               // background-color: red;
+            }
+            .chat-heads {
+               width: 25%;
+               .card-title {
+                  padding: 0;
+                  padding-top: 20px;
+               }
+               .card-body {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  gap: 5px;
+                  .chat-single-head {
+                     border-radius: 3px;
+                  }
+
+                  li {
+                     display: flex;
+                     flex-direction: column;
+                     align-items: center;
+                     a {
+                        h6 {
+                           text-align: center;
+                        }
+                     }
+                  }
+               }
+            }
+         }
       }
    }
 }

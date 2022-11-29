@@ -348,14 +348,10 @@
 .logo {
    line-height: 1;
 }
-@media (min-width: 1200px) {
-   .logo {
-      width: 280px;
-   }
-}
+
 .logo img {
    max-height: 60px;
-   margin-right: 6px;
+   margin-right: 147px;
 }
 .logo span {
    font-size: 26px;
@@ -370,21 +366,16 @@
    height: 60px;
    box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
    background-color: #fff;
-   padding-left: 20px;
+   padding-inline: 20px;
    /* Toggle Sidebar Button */
    /* Search Bar */
 }
 .header .toggle-sidebar-btn {
    font-size: 32px;
-   padding-left: 10px;
    cursor: pointer;
    color: #012970;
 }
-.header .search-bar {
-   min-width: 360px;
-   /* padding: 0 20px; */
-   padding-left: 280px;
-}
+
 @media (max-width: 1199px) {
    .header .search-bar {
       position: fixed;
