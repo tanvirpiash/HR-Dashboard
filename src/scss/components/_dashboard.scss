@@ -128,7 +128,12 @@
                }
             }
             .chat-heads {
-               min-width: 25%;
+               width: 10%;
+               top: 10px;
+               position: fixed;
+               top: 0;
+               align-self: flex-start;
+               z-index: 10;
                @include desktop-lg {
                   min-width: 100%;
                }
@@ -144,18 +149,60 @@
                   display: flex;
                   flex-direction: column;
                   align-items: center;
-                  gap: 5px;
+                  gap: 17px;
                   @include desktop-lg {
                      flex-direction: row;
                      // flex-wrap: wrap;
                      justify-content: center;
                   }
                   .chat-single-head {
-                     border-radius: 3px;
+                     padding: 0;
+                     border: none;
+                     position: relative;
+                     .active-status {
+                        background-color: green;
+                        border-radius: 10px;
+                        height: 15px;
+                        width: 15px;
+                        position: absolute;
+                        bottom: 1px;
+                        right: 4px;
+                        border: 2px solid white;
+                     }
+                     &:hover {
+                        background-color: white;
+                        .popup-dialog {
+                           // display: block;
+                           // visibility: visible;
+                           opacity: 1;
+                           left: -114px;
+                        }
+                        a {
+                           transform: scale(1.1);
+                           img {
+                           }
+                        }
+                     }
                      @include desktop-lg-sm {
                         max-width: 25%;
                      }
+                     .popup-dialog {
+                        transition: $basic-transition;
+                        // visibility: hidden;
+                        position: absolute;
+                        opacity: 0;
+                        background-color: white;
+                        box-shadow: 0px 0 30px rgb(1 41 112 / 10%);
+                        border-radius: 5px;
+                        text-align: center;
+
+                        left: -100px;
+                        top: 5px;
+                        z-index: 1;
+                        padding: 5px;
+                     }
                      a {
+                        transition: $basic-transition;
                         img {
                            max-width: 100%;
                         }
@@ -175,6 +222,110 @@
                }
             }
          }
+      }
+   }
+
+   .chat-icon {
+      background-color: #012970;
+      z-index: 1;
+      .button-wrapper {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         height: 50px;
+         width: 50px;
+         border-radius: 10px;
+         background-color: black;
+         bottom: 50px;
+         right: 50px;
+         position: fixed;
+         i {
+            color: red;
+         }
+      }
+      .chat-heads {
+         visibility: hidden;
+         opacity: 0;
+         position: absolute;
+         bottom: 75px;
+         width: 75px;
+         right: -50px;
+         z-index: 1;
+         transition: $basic-transition;
+         .card-title {
+            padding: 20px 0 0 0;
+            text-align: center;
+         }
+         .card-body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 17px;
+            .chat-single-head {
+               padding: 0;
+               border: none;
+               position: relative;
+               .active-status {
+                  background-color: green;
+                  border-radius: 10px;
+                  height: 15px;
+                  width: 15px;
+                  position: absolute;
+                  bottom: 1px;
+                  right: 4px;
+                  border: 2px solid white;
+               }
+               &:hover {
+                  background-color: white;
+                  .popup-dialog {
+                     opacity: 1;
+                     left: -114px;
+                  }
+                  a {
+                     transform: scale(1.1);
+                     img {
+                        max-width: 100%;
+                     }
+                  }
+               }
+               .popup-dialog {
+                  transition: $basic-transition;
+                  position: absolute;
+                  opacity: 0;
+                  background-color: white;
+                  box-shadow: 0px 0 30px rgb(1 41 112 / 10%);
+                  border-radius: 5px;
+                  text-align: center;
+                  left: -100px;
+                  top: 5px;
+                  z-index: 1;
+                  padding: 5px;
+               }
+               a {
+                  transition: $basic-transition;
+                  img {
+                     max-width: 100%;
+                  }
+               }
+            }
+
+            li {
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+               a {
+                  h6 {
+                     text-align: center;
+                  }
+               }
+            }
+         }
+      }
+      .opacity-toogle {
+         visibility: visible;
+         opacity: 1;
+         // right: 0;
+         right: 50px;
       }
    }
 }

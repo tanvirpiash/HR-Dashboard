@@ -7,6 +7,15 @@
 (function () {
    'use strict';
 
+   const chatIcon = document.querySelector('.chat-icon');
+   const chatHead = document.querySelector('.chat-heads');
+   chatHead.addEventListener('focusout', () => {
+      console.log('test');
+   });
+   chatIcon.addEventListener('click', () => {
+      chatHead.classList.toggle('opacity-toogle');
+   });
+
    /**
     * Easy selector helper function
     */
